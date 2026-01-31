@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6c8cfffetaun"]
+
+[ext_resource type="Script" uid="uid://lynnniufnsde" path="res://scripts/hub.gd" id="1_hub"]
+[ext_resource type="Texture2D" uid="uid://dlyyj77uw0ngu" path="res://assets/images/ui/play_normal.png" id="2_play_normal"]
+[ext_resource type="Texture2D" uid="uid://dvwxkx0b6eiq2" path="res://assets/images/ui/play_icon.png" id="4_play_icon"]
+[ext_resource type="Texture2D" uid="uid://dlb8nwg8e8lei" path="res://assets/images/ui/tutorial_normal.png" id="5_tutorial_normal"]
+[ext_resource type="Texture2D" uid="uid://d26nqo4y7h5gf" path="res://assets/images/ui/tutorial_icon.png" id="7_tutorial_icon"]
+
+[node name="Hub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hub")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.92, 0.96, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="TopDeco" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "🌸✨🎀✨🌸"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
+theme_override_font_sizes/font_size = 48
+text = "💖 Mask Designer 💖"
+horizontal_alignment = 1
+
+[node name="BottomDeco" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.5, 0.6, 1)
+theme_override_font_sizes/font_size = 24
+text = "～♡～ Make it beautiful ～♡～"
+horizontal_alignment = 1
+
+[node name="PlayButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlayIcon" type="TextureRect" parent="VBoxContainer/PlayButtonContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("4_play_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer/PlayButtonContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+texture_normal = ExtResource("2_play_normal")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TutorialButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TutorialIcon" type="TextureRect" parent="VBoxContainer/TutorialButtonContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("7_tutorial_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TutorialButton" type="TextureButton" parent="VBoxContainer/TutorialButtonContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+texture_normal = ExtResource("5_tutorial_normal")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="mouse_entered" from="VBoxContainer/PlayButtonContainer" to="." method="_on_play_hovered"]
+[connection signal="pressed" from="VBoxContainer/PlayButtonContainer/PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/TutorialButtonContainer/TutorialButton" to="." method="_on_tutorial_pressed"]

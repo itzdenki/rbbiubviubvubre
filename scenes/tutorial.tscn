@@ -1,0 +1,183 @@
+[gd_scene load_steps=5 format=3 uid="uid://tutorial_scene"]
+
+[ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_tut"]
+[ext_resource type="Texture2D" path="res://assets/images/ui/back_normal.png" id="2_back_normal"]
+[ext_resource type="Texture2D" path="res://assets/images/ui/back_hover.png" id="3_back_hover"]
+[ext_resource type="Texture2D" path="res://assets/images/ui/back_icon.png" id="4_back_icon"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tut")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(1.0, 0.95, 0.97, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 80.0
+offset_right = -50.0
+offset_bottom = -20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
+text = "🌸 How to Play 🌸"
+horizontal_alignment = 1
+
+[node name="Section1" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section1"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section1/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
+theme_override_font_sizes/font_size = 28
+text = "🎨 Color Buttons"
+
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section1/VBox"]
+layout_mode = 2
+text = "Click on a color circle (🔴🟠🟡🟢🔵🟣🟤⚪) to change
+the color of your mask. The mask will be tinted with
+the selected color!"
+autowrap_mode = 2
+
+[node name="Section2" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section2/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "✨ Decoration Buttons"
+
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section2/VBox"]
+layout_mode = 2
+text = "Click on a decoration (🌸🌺🌻🌷🍀🍃⭐💎🦋💖✨🎀)
+to select it. Then click anywhere on the mask canvas
+to place the decoration. You can place many decorations!"
+autowrap_mode = 2
+
+[node name="Section3" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section3/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "👆 Drag & Drop"
+
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section3/VBox"]
+layout_mode = 2
+text = "Click and hold on any placed decoration to drag it
+to a new position. Arrange your decorations freely!"
+autowrap_mode = 2
+
+[node name="Section4" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section4"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section4/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "🗑️ Clear All Button"
+
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section4/VBox"]
+layout_mode = 2
+text = "Click this button to remove all decorations and
+reset the mask color back to white. Start fresh!"
+autowrap_mode = 2
+
+[node name="Section5" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section5"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section5/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "✅ Done Button"
+
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section5/VBox"]
+layout_mode = 2
+text = "When you're happy with your mask, click Done!
+You'll be asked to choose a face
+to wear your decorated mask."
+autowrap_mode = 2
+
+[node name="Section6" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section6"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section6/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "📸 Screenshot Button"
+
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section6/VBox"]
+layout_mode = 2
+text = "After choosing a face, click the Screenshot button
+to save your creation as an image file. Share your
+beautiful masked face with friends!"
+autowrap_mode = 2
+
+[node name="BackButtonContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 170.0
+offset_bottom = 64.0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="BackIcon" type="TextureRect" parent="BackButtonContainer"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("4_back_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackButton" type="TextureButton" parent="BackButtonContainer"]
+custom_minimum_size = Vector2(120, 44)
+layout_mode = 2
+texture_normal = ExtResource("2_back_normal")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="BackButtonContainer/BackButton" to="." method="_on_back_pressed"]

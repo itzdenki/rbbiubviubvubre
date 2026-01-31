@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://ch3bc7o2wa5w1"]
+
+[ext_resource type="Script" uid="uid://dbfwfflalqp4r" path="res://scripts/result_3.gd" id="1_result"]
+[ext_resource type="Texture2D" uid="uid://c4bxyjw1fs33l" path="res://assets/male.png" id="2_l2aw0"]
+[ext_resource type="Texture2D" uid="uid://d4aexm6kg3h4t" path="res://assets/images/ui/screenshot_normal.png" id="2_screenshot_normal"]
+[ext_resource type="Texture2D" uid="uid://dvewf2gxewctt" path="res://assets/mask/mask_3.png" id="3_mask_3"]
+[ext_resource type="Texture2D" uid="uid://bcuua42eglnqc" path="res://assets/images/ui/screenshot_icon.png" id="4_screenshot_icon"]
+[ext_resource type="Texture2D" uid="uid://b3pp3gdmvfmv7" path="res://assets/images/ui/back_normal.png" id="5_back_normal"]
+[ext_resource type="Texture2D" uid="uid://cxbl8412fxr0c" path="res://assets/images/ui/back_icon.png" id="7_back_icon"]
+
+[node name="Result" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_result")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.92, 0.95, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 5.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
+theme_override_font_sizes/font_size = 32
+text = "✨ Your Beautiful Creation! ✨"
+horizontal_alignment = 1
+
+[node name="ResultContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -310.0
+offset_right = 250.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FaceTexture" type="TextureRect" parent="ResultContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_l2aw0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MaskAlignmentRef" type="TextureRect" parent="ResultContainer"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 332.0
+offset_right = 425.0
+offset_bottom = 619.0
+texture = ExtResource("3_mask_3")
+expand_mode = 1
+
+[node name="ButtonBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -60.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="ScreenshotButtonContainer" type="HBoxContainer" parent="ButtonBar"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ScreenshotIcon" type="TextureRect" parent="ButtonBar/ScreenshotButtonContainer"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("4_screenshot_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScreenshotButton" type="TextureButton" parent="ButtonBar/ScreenshotButtonContainer"]
+custom_minimum_size = Vector2(140, 44)
+layout_mode = 2
+texture_normal = ExtResource("2_screenshot_normal")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="ButtonBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButtonContainer" type="HBoxContainer" parent="ButtonBar"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="BackIcon" type="TextureRect" parent="ButtonBar/BackButtonContainer"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("7_back_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackButton" type="TextureButton" parent="ButtonBar/BackButtonContainer"]
+custom_minimum_size = Vector2(140, 44)
+layout_mode = 2
+texture_normal = ExtResource("5_back_normal")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="ButtonBar/ScreenshotButtonContainer/ScreenshotButton" to="." method="_on_screenshot_pressed"]
+[connection signal="pressed" from="ButtonBar/BackButtonContainer/BackButton" to="." method="_on_back_pressed"]
