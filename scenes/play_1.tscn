@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcj2ibjs83hpp"]
+[gd_scene format=3 uid="uid://bcj2ibjs83hpp"]
 
 [ext_resource type="Script" uid="uid://dsgsv8n7f6px0" path="res://scripts/play.gd" id="1_play"]
 [ext_resource type="Texture2D" uid="uid://3tjnidxhieia" path="res://assets/images/ui/done_normal.png" id="2_done_normal"]
+[ext_resource type="Texture2D" uid="uid://c1lisb7jgeg6q" path="res://assets/images/ui/clear_hover.png" id="4_2533r"]
 [ext_resource type="Texture2D" uid="uid://bmsccityi0mk2" path="res://assets/images/ui/done_icon.png" id="4_done_icon"]
 [ext_resource type="Texture2D" uid="uid://c7jidhwx716o" path="res://assets/images/ui/clear_normal.png" id="5_clear_normal"]
+[ext_resource type="Texture2D" uid="uid://7s5onvs7mpsl" path="res://assets/images/ui/done_hover.png" id="6_6lb7w"]
 [ext_resource type="Texture2D" uid="uid://b2jul02moc7hn" path="res://assets/images/ui/clear_icon.png" id="7_clear_icon"]
 
-[node name="Play1" type="Control"]
+[node name="Play1" type="Control" unique_id=1205718053]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +19,7 @@ script = ExtResource("1_play")
 mask_content_width_override = 350
 mask_content_height_override = 449
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=2139918516]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.92, 0.95, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1831986786]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,65 +40,65 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 80
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=382755165]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ColorPanel" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="ColorPanel" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1199754446]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 12
 
-[node name="ColorLabel" type="Label" parent="MarginContainer/HBoxContainer/ColorPanel"]
+[node name="ColorLabel" type="Label" parent="MarginContainer/HBoxContainer/ColorPanel" unique_id=452066619]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
 theme_override_font_sizes/font_size = 20
 text = "🎨 Paint Colors"
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/HBoxContainer/ColorPanel"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/HBoxContainer/ColorPanel" unique_id=1515564068]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 
-[node name="PresetLabel" type="Label" parent="MarginContainer/HBoxContainer/ColorPanel"]
+[node name="PresetLabel" type="Label" parent="MarginContainer/HBoxContainer/ColorPanel" unique_id=547027302]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.5, 0.65, 1)
 theme_override_font_sizes/font_size = 16
 text = "💕 Quick Colors"
 
-[node name="ColorPresets" type="GridContainer" parent="MarginContainer/HBoxContainer/ColorPanel"]
+[node name="ColorPresets" type="GridContainer" parent="MarginContainer/HBoxContainer/ColorPanel" unique_id=1972491206]
 layout_mode = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 4
 
-[node name="BrushLabel" type="Label" parent="MarginContainer/HBoxContainer/ColorPanel"]
+[node name="BrushLabel" type="Label" parent="MarginContainer/HBoxContainer/ColorPanel" unique_id=603833981]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.5, 0.65, 1)
 theme_override_font_sizes/font_size = 16
 text = "🖌️ Brush: 15"
 
-[node name="BrushSlider" type="HSlider" parent="MarginContainer/HBoxContainer/ColorPanel"]
+[node name="BrushSlider" type="HSlider" parent="MarginContainer/HBoxContainer/ColorPanel" unique_id=1369023800]
 custom_minimum_size = Vector2(120, 20)
 layout_mode = 2
 min_value = 5.0
 max_value = 40.0
 value = 15.0
 
-[node name="CenterPanel" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+[node name="CenterPanel" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=1866286377]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MaskCanvas" type="SubViewportContainer" parent="MarginContainer/HBoxContainer/CenterPanel"]
+[node name="MaskCanvas" type="SubViewportContainer" parent="MarginContainer/HBoxContainer/CenterPanel" unique_id=1147682625]
 custom_minimum_size = Vector2(750, 500)
 layout_mode = 2
 
-[node name="SubViewport" type="SubViewport" parent="MarginContainer/HBoxContainer/CenterPanel/MaskCanvas"]
+[node name="SubViewport" type="SubViewport" parent="MarginContainer/HBoxContainer/CenterPanel/MaskCanvas" unique_id=1953985911]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(750, 500)
 render_target_update_mode = 4
 
-[node name="MaskRoot" type="Control" parent="MarginContainer/HBoxContainer/CenterPanel/MaskCanvas/SubViewport"]
+[node name="MaskRoot" type="Control" parent="MarginContainer/HBoxContainer/CenterPanel/MaskCanvas/SubViewport" unique_id=517338578]
 custom_minimum_size = Vector2(350, 449)
 layout_mode = 3
 anchors_preset = 0
@@ -105,7 +107,7 @@ offset_top = 25.0
 offset_right = 550.0
 offset_bottom = 474.0
 
-[node name="PaintTexture" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterPanel/MaskCanvas/SubViewport/MaskRoot"]
+[node name="PaintTexture" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterPanel/MaskCanvas/SubViewport/MaskRoot" unique_id=1007476521]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -114,7 +116,7 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="MaskTexture" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterPanel/MaskCanvas/SubViewport/MaskRoot"]
+[node name="MaskTexture" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterPanel/MaskCanvas/SubViewport/MaskRoot" unique_id=473386524]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -123,35 +125,35 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="DecorationsContainer" type="Node2D" parent="MarginContainer/HBoxContainer/CenterPanel/MaskCanvas/SubViewport/MaskRoot"]
+[node name="DecorationsContainer" type="Node2D" parent="MarginContainer/HBoxContainer/CenterPanel/MaskCanvas/SubViewport/MaskRoot" unique_id=313227241]
 z_index = 10
 
-[node name="DecorationsPanel" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="DecorationsPanel" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1895894323]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="DecorLabel" type="Label" parent="MarginContainer/HBoxContainer/DecorationsPanel"]
+[node name="DecorLabel" type="Label" parent="MarginContainer/HBoxContainer/DecorationsPanel" unique_id=1757837566]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
 theme_override_font_sizes/font_size = 20
 text = "✨ Decorations ✨"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/DecorationsPanel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/DecorationsPanel" unique_id=1749161680]
 custom_minimum_size = Vector2(180, 400)
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="DecorGrid" type="GridContainer" parent="MarginContainer/HBoxContainer/DecorationsPanel/ScrollContainer"]
+[node name="DecorGrid" type="GridContainer" parent="MarginContainer/HBoxContainer/DecorationsPanel/ScrollContainer" unique_id=1776371810]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 3
 
-[node name="BottomBar" type="HBoxContainer" parent="."]
+[node name="BottomBar" type="HBoxContainer" parent="." unique_id=2011397508]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -164,44 +166,46 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 20
 
-[node name="ClearButtonContainer" type="HBoxContainer" parent="BottomBar"]
+[node name="ClearButtonContainer" type="HBoxContainer" parent="BottomBar" unique_id=1104657656]
 layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="ClearIcon" type="TextureRect" parent="BottomBar/ClearButtonContainer"]
+[node name="ClearIcon" type="TextureRect" parent="BottomBar/ClearButtonContainer" unique_id=457396335]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("7_clear_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="ClearButton" type="TextureButton" parent="BottomBar/ClearButtonContainer"]
+[node name="ClearButton" type="TextureButton" parent="BottomBar/ClearButtonContainer" unique_id=2131641329]
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 2
 texture_normal = ExtResource("5_clear_normal")
+texture_hover = ExtResource("4_2533r")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Spacer" type="Control" parent="BottomBar"]
+[node name="Spacer" type="Control" parent="BottomBar" unique_id=391518173]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DoneButtonContainer" type="HBoxContainer" parent="BottomBar"]
+[node name="DoneButtonContainer" type="HBoxContainer" parent="BottomBar" unique_id=697089133]
 layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="DoneIcon" type="TextureRect" parent="BottomBar/DoneButtonContainer"]
+[node name="DoneIcon" type="TextureRect" parent="BottomBar/DoneButtonContainer" unique_id=1885400226]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("4_done_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="DoneButton" type="TextureButton" parent="BottomBar/DoneButtonContainer"]
+[node name="DoneButton" type="TextureButton" parent="BottomBar/DoneButtonContainer" unique_id=217086928]
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 2
 texture_normal = ExtResource("2_done_normal")
+texture_hover = ExtResource("6_6lb7w")
 ignore_texture_size = true
 stretch_mode = 5

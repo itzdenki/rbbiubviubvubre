@@ -16,7 +16,6 @@ func _ready() -> void:
 	# Back pressed is connected in scene
 	back_normal_texture = load("res://assets/images/ui/back_normal.png") as Texture2D
 	back_hover_texture = load("res://assets/images/ui/back_hover.png") as Texture2D
-	back_button.texture_hover = back_normal_texture
 
 
 func _setup_face_textures() -> void:
@@ -49,19 +48,30 @@ func _get_result_scene_for_mask(mask_path: String) -> String:
 	return "res://scenes/result_1.tscn"
 
 
+func _get_play_scene_for_mask(mask_path: String) -> String:
+	if mask_path.ends_with("mask_1.png"):
+		return "res://scenes/play_1.tscn"
+	if mask_path.ends_with("mask_2.png"):
+		return "res://scenes/play.tscn"
+	if mask_path.ends_with("mask_3.png"):
+		return "res://scenes/play_3.tscn"
+	return "res://scenes/play.tscn"
+
+
 func _on_back_pressed() -> void:
 	if is_back_animating:
 		return
 	is_back_animating = true
-	await _back_blink_animation()
-	get_tree().change_scene_to_file("res://scenes/play.tscn")
+	# await _back_blink_animation()
+	var play_scene := _get_play_scene_for_mask(GameManager.selected_mask_path)
+	get_tree().change_scene_to_file(play_scene)
 
 
-func _back_blink_animation() -> void:
-	for i in range(10):
-		back_button.texture_normal = back_hover_texture
-		await get_tree().create_timer(0.15).timeout
-		back_button.texture_normal = back_normal_texture
-		await get_tree().create_timer(0.15).timeout
-	back_button.texture_normal = back_hover_texture
-	await get_tree().create_timer(0.1).timeout
+# func _back_blink_animation() -> void:
+# 	for i in range(10):
+# 		back_button.texture_normal = back_hover_texture
+# 		await get_tree().create_timer(0.15).timeout
+# 		back_button.texture_normal = back_normal_texture
+# 		await get_tree().create_timer(0.15).timeout
+# 	back_button.texture_normal = back_hover_texture
+# 	await get_tree().create_timer(0.1).timeout

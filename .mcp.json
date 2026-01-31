@@ -1,0 +1,15 @@
+{
+    "mcpServers": {
+        "godot": {
+            "type": "stdio",
+            "command": "node",
+            "args": [
+                "D:\\Orius_Projects\\godot-mcp\\build\\index.js"
+            ],
+            "env": {
+                "DEBUG": "true",
+                "GODOT_PATH": "C:\\Program Files\\Godot\\Godot 4.6.exe"
+            }
+        }
+    }
+}

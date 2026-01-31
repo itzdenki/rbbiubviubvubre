@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://facesel001"]
+[gd_scene format=3 uid="uid://facesel001"]
 
 [ext_resource type="Script" uid="uid://demo1lr8gcpg5" path="res://scripts/face_selection.gd" id="1_facesel"]
 [ext_resource type="Texture2D" uid="uid://b3pp3gdmvfmv7" path="res://assets/images/ui/back_normal.png" id="2_back_normal"]
+[ext_resource type="Texture2D" uid="uid://cmgjix0ntu3hg" path="res://assets/images/ui/back_hover.png" id="4_7npgh"]
 [ext_resource type="Texture2D" uid="uid://cxbl8412fxr0c" path="res://assets/images/ui/back_icon.png" id="4_back_icon"]
 
-[node name="FaceSelection" type="Control"]
+[node name="FaceSelection" type="Control" unique_id=103236006]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_facesel")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=2091083764]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.92, 0.95, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1151258049]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,42 +32,42 @@ offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2040534861]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=192187539]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
 theme_override_font_sizes/font_size = 36
 text = "🌸 Choose a face 🌸"
 horizontal_alignment = 1
 
-[node name="FacesContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="FacesContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1693080300]
 layout_mode = 2
 theme_override_constants/separation = 80
 alignment = 1
 
-[node name="MaleVBox" type="VBoxContainer" parent="CenterContainer/VBoxContainer/FacesContainer"]
+[node name="MaleVBox" type="VBoxContainer" parent="CenterContainer/VBoxContainer/FacesContainer" unique_id=1458690983]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="MaleButton" type="TextureButton" parent="CenterContainer/VBoxContainer/FacesContainer/MaleVBox"]
+[node name="MaleButton" type="TextureButton" parent="CenterContainer/VBoxContainer/FacesContainer/MaleVBox" unique_id=1338130827]
 custom_minimum_size = Vector2(180, 220)
 layout_mode = 2
 size_flags_horizontal = 4
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MaleLabel" type="Label" parent="CenterContainer/VBoxContainer/FacesContainer/MaleVBox"]
+[node name="MaleLabel" type="Label" parent="CenterContainer/VBoxContainer/FacesContainer/MaleVBox" unique_id=902130211]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.5, 0.7, 1)
 theme_override_font_sizes/font_size = 22
 text = "🫠 DevGame Trùm GameMaker"
 horizontal_alignment = 1
 
-[node name="BackButtonContainer" type="HBoxContainer" parent="."]
+[node name="BackButtonContainer" type="HBoxContainer" parent="." unique_id=1951913431]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -81,17 +82,18 @@ grow_vertical = 0
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="BackIcon" type="TextureRect" parent="BackButtonContainer"]
+[node name="BackIcon" type="TextureRect" parent="BackButtonContainer" unique_id=1210864391]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("4_back_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="BackButton" type="TextureButton" parent="BackButtonContainer"]
+[node name="BackButton" type="TextureButton" parent="BackButtonContainer" unique_id=1943144811]
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 2
 texture_normal = ExtResource("2_back_normal")
+texture_hover = ExtResource("4_7npgh")
 ignore_texture_size = true
 stretch_mode = 5
 

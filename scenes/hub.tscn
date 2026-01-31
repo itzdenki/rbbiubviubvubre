@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6c8cfffetaun"]
+[gd_scene format=3 uid="uid://c6c8cfffetaun"]
 
 [ext_resource type="Script" uid="uid://lynnniufnsde" path="res://scripts/hub.gd" id="1_hub"]
 [ext_resource type="Texture2D" uid="uid://dlyyj77uw0ngu" path="res://assets/images/ui/play_normal.png" id="2_play_normal"]
+[ext_resource type="Texture2D" uid="uid://bf6fyv2n6qgha" path="res://art/play2.png" id="3_play_hover"]
 [ext_resource type="Texture2D" uid="uid://dvwxkx0b6eiq2" path="res://assets/images/ui/play_icon.png" id="4_play_icon"]
 [ext_resource type="Texture2D" uid="uid://dlb8nwg8e8lei" path="res://assets/images/ui/tutorial_normal.png" id="5_tutorial_normal"]
+[ext_resource type="Texture2D" uid="uid://dqunn4yflrrdk" path="res://assets/images/ui/tutorial_hover.png" id="6_tutorial_hover"]
 [ext_resource type="Texture2D" uid="uid://d26nqo4y7h5gf" path="res://assets/images/ui/tutorial_icon.png" id="7_tutorial_icon"]
 
-[node name="Hub" type="Control"]
+[node name="Hub" type="Control" unique_id=400753676]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hub")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=2126741358]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.92, 0.96, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=755793983]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,61 +41,63 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
 
-[node name="TopDeco" type="Label" parent="VBoxContainer"]
+[node name="TopDeco" type="Label" parent="VBoxContainer" unique_id=127831232]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "🌸✨🎀✨🌸"
 horizontal_alignment = 1
 
-[node name="Title" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=2040844021]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
 theme_override_font_sizes/font_size = 48
 text = "💖 Mask Designer 💖"
 horizontal_alignment = 1
 
-[node name="BottomDeco" type="Label" parent="VBoxContainer"]
+[node name="BottomDeco" type="Label" parent="VBoxContainer" unique_id=2020703754]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.5, 0.6, 1)
 theme_override_font_sizes/font_size = 24
 text = "～♡～ Make it beautiful ～♡～"
 horizontal_alignment = 1
 
-[node name="PlayButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="PlayButtonContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1056671606]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="PlayIcon" type="TextureRect" parent="VBoxContainer/PlayButtonContainer"]
+[node name="PlayIcon" type="TextureRect" parent="VBoxContainer/PlayButtonContainer" unique_id=650720571]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("4_play_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PlayButton" type="TextureButton" parent="VBoxContainer/PlayButtonContainer"]
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer/PlayButtonContainer" unique_id=2067594424]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 texture_normal = ExtResource("2_play_normal")
+texture_hover = ExtResource("3_play_hover")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="TutorialButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="TutorialButtonContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=441697594]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="TutorialIcon" type="TextureRect" parent="VBoxContainer/TutorialButtonContainer"]
+[node name="TutorialIcon" type="TextureRect" parent="VBoxContainer/TutorialButtonContainer" unique_id=543976159]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("7_tutorial_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TutorialButton" type="TextureButton" parent="VBoxContainer/TutorialButtonContainer"]
+[node name="TutorialButton" type="TextureButton" parent="VBoxContainer/TutorialButtonContainer" unique_id=1001557191]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 texture_normal = ExtResource("5_tutorial_normal")
+texture_hover = ExtResource("6_tutorial_hover")
 ignore_texture_size = true
 stretch_mode = 5
 

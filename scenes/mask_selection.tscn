@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5cvuxs4lq1sj"]
+[gd_scene format=3 uid="uid://c5cvuxs4lq1sj"]
 
 [ext_resource type="Script" uid="uid://dgb2r3ag8baxc" path="res://scripts/mask_selection.gd" id="1_mask_sel"]
 [ext_resource type="Texture2D" uid="uid://b3pp3gdmvfmv7" path="res://assets/images/ui/back_normal.png" id="2_back_normal"]
 [ext_resource type="Texture2D" uid="uid://cxbl8412fxr0c" path="res://assets/images/ui/back_icon.png" id="3_back_icon"]
+[ext_resource type="Texture2D" uid="uid://5js75es5k3bs" path="res://assets/mask/mask_1.png" id="4_mask_1"]
+[ext_resource type="Texture2D" uid="uid://dvewf2gxewctt" path="res://assets/mask/mask_3.png" id="5_mask_3"]
+[ext_resource type="Texture2D" uid="uid://cvd2xm2hsuy8u" path="res://art/back2.png" id="6_eso7t"]
 
-[node name="MaskSelection" type="Control"]
+[node name="MaskSelection" type="Control" unique_id=1867759379]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mask_sel")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1960476734]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.92, 0.95, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=524753738]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,61 +34,63 @@ offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=925558377]
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=737401629]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
 theme_override_font_sizes/font_size = 36
 text = "🎭 Chọn style mặt nạ 🎭"
 horizontal_alignment = 1
 
-[node name="MasksContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="MasksContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=977488183]
 layout_mode = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Mask1VBox" type="VBoxContainer" parent="CenterContainer/VBoxContainer/MasksContainer"]
+[node name="Mask1VBox" type="VBoxContainer" parent="CenterContainer/VBoxContainer/MasksContainer" unique_id=54028250]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Mask1Button" type="TextureButton" parent="CenterContainer/VBoxContainer/MasksContainer/Mask1VBox"]
+[node name="Mask1Button" type="TextureButton" parent="CenterContainer/VBoxContainer/MasksContainer/Mask1VBox" unique_id=951262575]
 custom_minimum_size = Vector2(160, 120)
 layout_mode = 2
 size_flags_horizontal = 4
+texture_normal = ExtResource("4_mask_1")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Mask1Label" type="Label" parent="CenterContainer/VBoxContainer/MasksContainer/Mask1VBox"]
+[node name="Mask1Label" type="Label" parent="CenterContainer/VBoxContainer/MasksContainer/Mask1VBox" unique_id=2100122378]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.5, 0.7, 1)
 theme_override_font_sizes/font_size = 18
 text = "Full Mặt"
 horizontal_alignment = 1
 
-[node name="Mask3VBox" type="VBoxContainer" parent="CenterContainer/VBoxContainer/MasksContainer"]
+[node name="Mask3VBox" type="VBoxContainer" parent="CenterContainer/VBoxContainer/MasksContainer" unique_id=724162603]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Mask3Button" type="TextureButton" parent="CenterContainer/VBoxContainer/MasksContainer/Mask3VBox"]
+[node name="Mask3Button" type="TextureButton" parent="CenterContainer/VBoxContainer/MasksContainer/Mask3VBox" unique_id=648197890]
 custom_minimum_size = Vector2(160, 120)
 layout_mode = 2
 size_flags_horizontal = 4
+texture_normal = ExtResource("5_mask_3")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Mask3Label" type="Label" parent="CenterContainer/VBoxContainer/MasksContainer/Mask3VBox"]
+[node name="Mask3Label" type="Label" parent="CenterContainer/VBoxContainer/MasksContainer/Mask3VBox" unique_id=1091903796]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.5, 0.7, 1)
 theme_override_font_sizes/font_size = 18
 text = "Khẩu Trang"
 horizontal_alignment = 1
 
-[node name="BackButtonContainer" type="HBoxContainer" parent="."]
+[node name="BackButtonContainer" type="HBoxContainer" parent="." unique_id=237629986]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -100,18 +105,21 @@ grow_vertical = 0
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="BackIcon" type="TextureRect" parent="BackButtonContainer"]
+[node name="BackIcon" type="TextureRect" parent="BackButtonContainer" unique_id=888605791]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("3_back_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="BackButton" type="TextureButton" parent="BackButtonContainer"]
+[node name="BackButton" type="TextureButton" parent="BackButtonContainer" unique_id=424611802]
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 2
 texture_normal = ExtResource("2_back_normal")
+texture_hover = ExtResource("6_eso7t")
 ignore_texture_size = true
 stretch_mode = 5
 
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MasksContainer/Mask1VBox/Mask1Button" to="." method="_on_mask1_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MasksContainer/Mask3VBox/Mask3Button" to="." method="_on_mask3_pressed"]
 [connection signal="pressed" from="BackButtonContainer/BackButton" to="." method="_on_back_pressed"]

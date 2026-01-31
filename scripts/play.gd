@@ -90,11 +90,9 @@ func _ready() -> void:
 	# Clear button textures
 	clear_normal_texture = load("res://assets/images/ui/clear_normal.png") as Texture2D
 	clear_hover_texture = load("res://assets/images/ui/clear_hover.png") as Texture2D
-	clear_button.texture_hover = clear_normal_texture
 	# Done button textures
 	done_normal_texture = load("res://assets/images/ui/done_normal.png") as Texture2D
 	done_hover_texture = load("res://assets/images/ui/done_hover.png") as Texture2D
-	done_button.texture_hover = done_normal_texture
 	_populate_emoji_palette()
 	mask_canvas.gui_input.connect(_on_mask_canvas_gui_input)
 	mask_canvas.mouse_entered.connect(_on_mask_canvas_mouse_entered)
@@ -288,6 +286,11 @@ func _setup_mask_and_paint() -> void:
 	var paint_height := MASK_CONTENT_HEIGHT
 	paint_image = Image.create(paint_width, paint_height, false, Image.FORMAT_RGBA8)
 	paint_image.fill(Color(0, 0, 0, 0))  # Transparent
+
+	# Restore paint layer từ GameManager nếu có
+	if GameManager.decorated_mask_image and GameManager.decorated_mask_image.get_width() == paint_width and GameManager.decorated_mask_image.get_height() == paint_height:
+		paint_image = GameManager.decorated_mask_image.duplicate()
+
 	paint_image_texture = ImageTexture.create_from_image(paint_image)
 	paint_texture.texture = paint_image_texture
 	
@@ -454,7 +457,6 @@ func _on_mask_canvas_gui_input(event: InputEvent) -> void:
 
 
 func _is_inside_mask(x: int, y: int) -> bool:
-	# DEBUG: Allow painting anywhere for testing
 	if x < 0 or y < 0 or x >= paint_image.get_width() or y >= paint_image.get_height():
 		return false
 	return true  # Always allow painting for testing
@@ -537,7 +539,7 @@ func _on_clear_pressed() -> void:
 		return
 	is_clear_animating = true
 	# Blink for 3 seconds
-	await _clear_blink_animation()
+	# await _clear_blink_animation()
 	# Clear decorations
 	for child in decorations_container.get_children():
 		child.queue_free()
@@ -564,7 +566,7 @@ func _on_done_pressed() -> void:
 		return
 	is_done_animating = true
 	# Blink for 3 seconds
-	await _done_blink_animation()
+	# await _done_blink_animation()
 	# Capture and navigate
 	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	await get_tree().process_frame
@@ -575,7 +577,7 @@ func _on_done_pressed() -> void:
 	var my := int((500 - MASK_CONTENT_HEIGHT) / 2.0)
 	var mask_rect := Rect2i(mx, my, MASK_CONTENT_WIDTH, MASK_CONTENT_HEIGHT)
 	var img := full_img.get_region(mask_rect)
-	GameManager.decorated_mask_image = img
+	GameManager.decorated_mask_image = paint_image.duplicate()
 	GameManager.selected_face = ""
 	get_tree().change_scene_to_file("res://scenes/face_selection.tscn")
 

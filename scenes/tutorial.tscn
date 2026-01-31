@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://tutorial_scene"]
+[gd_scene format=3 uid="uid://d3y3gy27gfoqh"]
 
-[ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_tut"]
-[ext_resource type="Texture2D" path="res://assets/images/ui/back_normal.png" id="2_back_normal"]
-[ext_resource type="Texture2D" path="res://assets/images/ui/back_hover.png" id="3_back_hover"]
-[ext_resource type="Texture2D" path="res://assets/images/ui/back_icon.png" id="4_back_icon"]
+[ext_resource type="Script" uid="uid://dhltrievawjic" path="res://scripts/tutorial.gd" id="1_tut"]
+[ext_resource type="Texture2D" uid="uid://b3pp3gdmvfmv7" path="res://assets/images/ui/back_normal.png" id="2_back_normal"]
+[ext_resource type="Texture2D" uid="uid://cmgjix0ntu3hg" path="res://assets/images/ui/back_hover.png" id="3_back_hover"]
+[ext_resource type="Texture2D" uid="uid://cxbl8412fxr0c" path="res://assets/images/ui/back_icon.png" id="4_back_icon"]
 
-[node name="Tutorial" type="Control"]
+[node name="Tutorial" type="Control" unique_id=1583981469]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,14 +14,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tut")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=484089669]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(1.0, 0.95, 0.97, 1)
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.95, 0.97, 1)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=281645708]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,135 +32,136 @@ offset_left = 50.0
 offset_top = 80.0
 offset_right = -50.0
 offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1344349509]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1792824056]
 layout_mode = 2
-theme_override_font_sizes/font_size = 42
 theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
+theme_override_font_sizes/font_size = 42
 text = "🌸 How to Play 🌸"
 horizontal_alignment = 1
 
-[node name="Section1" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="Section1" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=728739071]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section1"]
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section1" unique_id=957384991]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section1/VBox"]
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section1/VBox" unique_id=1028342002]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.4, 0.6, 1)
 theme_override_font_sizes/font_size = 28
 text = "🎨 Color Buttons"
 
-[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section1/VBox"]
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section1/VBox" unique_id=509024162]
 layout_mode = 2
 text = "Click on a color circle (🔴🟠🟡🟢🔵🟣🟤⚪) to change
 the color of your mask. The mask will be tinted with
 the selected color!"
 autowrap_mode = 2
 
-[node name="Section2" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="Section2" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=1725751474]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section2"]
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section2" unique_id=1084097403]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section2/VBox"]
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section2/VBox" unique_id=914122600]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "✨ Decoration Buttons"
 
-[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section2/VBox"]
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section2/VBox" unique_id=1086999993]
 layout_mode = 2
 text = "Click on a decoration (🌸🌺🌻🌷🍀🍃⭐💎🦋💖✨🎀)
 to select it. Then click anywhere on the mask canvas
 to place the decoration. You can place many decorations!"
 autowrap_mode = 2
 
-[node name="Section3" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="Section3" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=677625082]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section3"]
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section3" unique_id=493484730]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section3/VBox"]
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section3/VBox" unique_id=1132211134]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "👆 Drag & Drop"
 
-[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section3/VBox"]
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section3/VBox" unique_id=1952462617]
 layout_mode = 2
 text = "Click and hold on any placed decoration to drag it
 to a new position. Arrange your decorations freely!"
 autowrap_mode = 2
 
-[node name="Section4" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="Section4" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=1323158863]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section4"]
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section4" unique_id=1398527242]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section4/VBox"]
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section4/VBox" unique_id=2094819082]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "🗑️ Clear All Button"
 
-[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section4/VBox"]
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section4/VBox" unique_id=306156403]
 layout_mode = 2
 text = "Click this button to remove all decorations and
 reset the mask color back to white. Start fresh!"
 autowrap_mode = 2
 
-[node name="Section5" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="Section5" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=585281926]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section5"]
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section5" unique_id=1187725995]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section5/VBox"]
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section5/VBox" unique_id=743721663]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "✅ Done Button"
 
-[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section5/VBox"]
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section5/VBox" unique_id=1805239626]
 layout_mode = 2
 text = "When you're happy with your mask, click Done!
 You'll be asked to choose a face
 to wear your decorated mask."
 autowrap_mode = 2
 
-[node name="Section6" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="Section6" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=918615219]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section6"]
+[node name="VBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/Section6" unique_id=1378822677]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section6/VBox"]
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer/Section6/VBox" unique_id=709848400]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "📸 Screenshot Button"
 
-[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section6/VBox"]
+[node name="Content" type="Label" parent="ScrollContainer/VBoxContainer/Section6/VBox" unique_id=1296590762]
 layout_mode = 2
 text = "After choosing a face, click the Screenshot button
 to save your creation as an image file. Share your
 beautiful masked face with friends!"
 autowrap_mode = 2
 
-[node name="BackButtonContainer" type="HBoxContainer" parent="."]
+[node name="BackButtonContainer" type="HBoxContainer" parent="." unique_id=409699136]
 layout_mode = 1
-anchors_preset = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 170.0
@@ -166,17 +169,18 @@ offset_bottom = 64.0
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="BackIcon" type="TextureRect" parent="BackButtonContainer"]
+[node name="BackIcon" type="TextureRect" parent="BackButtonContainer" unique_id=1608122516]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("4_back_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="BackButton" type="TextureButton" parent="BackButtonContainer"]
+[node name="BackButton" type="TextureButton" parent="BackButtonContainer" unique_id=1499735620]
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 2
 texture_normal = ExtResource("2_back_normal")
+texture_hover = ExtResource("3_back_hover")
 ignore_texture_size = true
 stretch_mode = 5
 
